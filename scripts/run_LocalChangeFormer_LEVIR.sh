@@ -12,7 +12,7 @@ n_class=2
 img_size=256    
 batch_size=8   
 lr=0.0001         
-max_epochs=5
+max_epochs=100
 embed_dim=256
 
 net_G=LocalChangeFormer        #ChangeFormerV6 is the finalized verion
