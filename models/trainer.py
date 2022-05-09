@@ -11,7 +11,7 @@ import numpy as np
 from misc.metric_tool import ConfuseMatrixMeter
 from models.losses import cross_entropy
 import models.losses as losses
-from models.losses import get_alpha, softmax_helper, FocalLoss, mIoULoss, mmIoULoss
+from models.losses import get_alpha, softmax_helper, FocalLoss, mIoULoss, mmIoULoss, ContrastiveLoss1
 
 from misc.logger_tool import Logger, Timer
 
@@ -34,6 +34,8 @@ class CDTrainer():
                                    else "cpu")
         print(self.device)
 
+        trainable_params = sum(param.numel() for param in self.net_G.parameters() if param.requires_grad)
+        print(f'Trainable params: {trainable_params}')
         # Learning rate and Beta1 for Adam optimizers
         self.lr = args.lr
 
@@ -93,6 +95,8 @@ class CDTrainer():
         self.weights = tuple(args.multi_pred_weights)
         if args.loss == 'ce':
             self._pxl_loss = cross_entropy
+        elif args.loss == 'wdmc':
+            self._pxl_loss = ContrastiveLoss1()
         elif args.loss == 'bce':
             self._pxl_loss = losses.binary_ce
         elif args.loss == 'fl':

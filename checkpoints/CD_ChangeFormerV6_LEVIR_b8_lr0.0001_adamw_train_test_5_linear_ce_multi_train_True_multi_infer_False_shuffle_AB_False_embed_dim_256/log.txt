@@ -66,3 +66,34 @@ Lastest model updated. Epoch_acc=0.4865, Historical_best_acc=0.4865 (at epoch 2)
 lr: 0.0000333
  
 Is_training: True. [4,4][1,6], imps: 0.61, est: 0.12h, G_loss: 1.91296, running_mf1: 0.51139
+================ (Thu Apr 21 03:17:40 2022) ================
+gpu_ids: 0 project_name: CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 checkpoint_root: checkpoints vis_root: vis num_workers: 2 dataset: CDDataset dataset_root: datasets/LEVIR_CD256 data_name: LEVIR batch_size: 8 split: train split_val: test img_size: 256 shuffle_AB: False n_class: 2 embed_dim: 256 pretrain: /Users/fazry/Documents/ChangeFormer/segformer.b2.512x512.ade.160k.pth multi_scale_train: True multi_scale_infer: False multi_pred_weights: [0.5, 0.5, 0.5, 0.8, 1.0] net_G: ChangeFormerV6 loss: ce optimizer: adamw lr: 0.0001 max_epochs: 5 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints/CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 vis_dir: vis/CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 loading last checkpoint...
+Epoch_to_start = 4, Historical_best_acc = 0.4865 (at epoch 2)
+
+lr: 0.0000333
+ 
+================ (Thu Apr 21 03:19:54 2022) ================
+gpu_ids: 0 project_name: CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 checkpoint_root: checkpoints vis_root: vis num_workers: 2 dataset: CDDataset dataset_root: datasets/LEVIR_CD256 data_name: LEVIR batch_size: 8 split: train split_val: test img_size: 256 shuffle_AB: False n_class: 2 embed_dim: 256 pretrain: /Users/fazry/Documents/ChangeFormer/segformer.b2.512x512.ade.160k.pth multi_scale_train: True multi_scale_infer: False multi_pred_weights: [0.5, 0.5, 0.5, 0.8, 1.0] net_G: ChangeFormerV6 loss: ce optimizer: adamw lr: 0.0001 max_epochs: 5 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints/CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 vis_dir: vis/CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 loading last checkpoint...
+Epoch_to_start = 4, Historical_best_acc = 0.4865 (at epoch 2)
+
+lr: 0.0000333
+ 
+================ (Thu Apr 21 03:41:17 2022) ================
+gpu_ids: 0 project_name: CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 checkpoint_root: checkpoints vis_root: vis num_workers: 2 dataset: CDDataset dataset_root: datasets/LEVIR_CD256 data_name: LEVIR batch_size: 8 split: train split_val: test img_size: 256 shuffle_AB: False n_class: 2 embed_dim: 256 pretrain: /Users/fazry/Documents/ChangeFormer/segformer.b2.512x512.ade.160k.pth multi_scale_train: True multi_scale_infer: False multi_pred_weights: [0.5, 0.5, 0.5, 0.8, 1.0] net_G: ChangeFormerV6 loss: ce optimizer: adamw lr: 0.0001 max_epochs: 5 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints/CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 vis_dir: vis/CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 loading last checkpoint...
+Epoch_to_start = 4, Historical_best_acc = 0.4865 (at epoch 2)
+
+lr: 0.0000333
+ 
+================ (Thu Apr 21 03:45:01 2022) ================
+gpu_ids: 0 project_name: CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 checkpoint_root: checkpoints vis_root: vis num_workers: 2 dataset: CDDataset dataset_root: datasets/LEVIR_CD256 data_name: LEVIR batch_size: 8 split: train split_val: test img_size: 256 shuffle_AB: False n_class: 2 embed_dim: 256 pretrain: /Users/fazry/Documents/ChangeFormer/segformer.b2.512x512.ade.160k.pth multi_scale_train: True multi_scale_infer: False multi_pred_weights: [0.5, 0.5, 0.5, 0.8, 1.0] net_G: ChangeFormerV6 loss: ce optimizer: adamw lr: 0.0001 max_epochs: 5 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints/CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 vis_dir: vis/CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 loading last checkpoint...
+Epoch_to_start = 4, Historical_best_acc = 0.4865 (at epoch 2)
+
+lr: 0.0000333
+ 
+Is_training: True. [4,4][1,167], imps: 0.48, est: 6.17h, G_loss: 1.88831, running_mf1: 0.49794
+================ (Thu Apr 21 06:34:55 2022) ================
+gpu_ids: 0 project_name: CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 checkpoint_root: checkpoints vis_root: vis num_workers: 2 dataset: CDDataset dataset_root: datasets/LEVIR_CD256 data_name: LEVIR batch_size: 8 split: train split_val: test img_size: 256 shuffle_AB: False n_class: 2 embed_dim: 256 pretrain: /Users/fazry/Documents/ChangeFormer/segformer.b2.512x512.ade.160k.pth multi_scale_train: True multi_scale_infer: False multi_pred_weights: [0.5, 0.5, 0.5, 0.8, 1.0] net_G: ChangeFormerV6 loss: ce optimizer: adamw lr: 0.0001 max_epochs: 5 lr_policy: linear lr_decay_iters: 100 checkpoint_dir: checkpoints/CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 vis_dir: vis/CD_ChangeFormerV6_LEVIR_b8_lr0.0001_adamw_train_test_5_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256 loading last checkpoint...
+Epoch_to_start = 4, Historical_best_acc = 0.4865 (at epoch 2)
+
+lr: 0.0000333
+ 

@@ -20,6 +20,36 @@ def cross_entropy(input, target, weight=None, reduction='mean',ignore_index=255)
     return F.cross_entropy(input=input, target=target, weight=weight,
                            ignore_index=ignore_index, reduction=reduction)
 
+class ContrastiveLoss1(nn.Module):
+    def __init__(self, margin1 = 0.3, margin2=2.2, eps=1e-6):
+        super(ContrastiveLoss1, self).__init__()
+        self.margin1 = margin1
+        self.margin2 = margin2
+        self.eps = eps
+
+    def forward(self, diff, y):
+        y = y.long()
+
+        if y.dim() == 4:
+            y = torch.squeeze(y, dim=1)
+        if diff.shape[-1] != y.shape[-1]:
+            diff = F.interpolate(diff, size=y.shape[1:], mode='bilinear',align_corners=True)
+        
+        #diff = torch.abs(x1-x2)
+        dist_sq = torch.pow(diff+self.eps, 2).sum(dim=1)
+        dist = torch.sqrt(dist_sq)
+
+        mdist_pos = torch.clamp(dist-self.margin1, min=0.0)
+        mdist_neg = torch.clamp(self.margin2-dist, min=0.0)
+
+        # print(y.data.type(), mdist_pos.data.type(), mdist_neg.data.type())
+        loss_pos =(1- y)*(mdist_pos.pow(2))
+        loss_neg = y*(mdist_neg.pow(2))
+
+        loss = torch.mean(loss_pos + loss_neg)
+
+        return loss
+        
 #Focal Loss
 def get_alpha(supervised_loader):
     # get number of classes

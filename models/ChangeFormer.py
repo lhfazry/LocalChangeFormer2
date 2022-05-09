@@ -1512,7 +1512,7 @@ class EncoderTransformer_v4(nn.Module):
         self.embed_dims     = embed_dims
 
         # patch embedding definitions
-        self.patch_embed1 = OverlapPatchEmbed(img_size=img_size, patch_size=7, stride=4, in_chans=in_chans,
+        self.patch_embed1 = OverlapPatchEmbed(img_size=img_size, patch_size=patch_size, stride=4, in_chans=in_chans,
                                               embed_dim=embed_dims[0])
         self.patch_embed2 = OverlapPatchEmbed(img_size=img_size // 4, patch_size=patch_size, stride=2, in_chans=embed_dims[0],
                                               embed_dim=embed_dims[1])
@@ -1597,6 +1597,7 @@ class EncoderTransformer_v4(nn.Module):
         B = x.shape[0]
         outs = []
     
+        #print("stage 1")
         # stage 1
         x1, H1, W1 = self.patch_embed1(x)
         for i, blk in enumerate(self.block1):
@@ -1604,7 +1605,9 @@ class EncoderTransformer_v4(nn.Module):
         x1 = self.norm1(x1)
         x1 = x1.reshape(B, H1, W1, -1).permute(0, 3, 1, 2).contiguous()
         outs.append(x1)
+        #print(f"Stage 1 shape: {x1.shape}")
 
+        #print("stage 2")
         # stage 2
         x1, H1, W1 = self.patch_embed2(x1)
         for i, blk in enumerate(self.block2):
@@ -1612,7 +1615,9 @@ class EncoderTransformer_v4(nn.Module):
         x1 = self.norm2(x1)
         x1 = x1.reshape(B, H1, W1, -1).permute(0, 3, 1, 2).contiguous()
         outs.append(x1)
+        #print(f"Stage 2 shape: {x1.shape}")
 
+        #print("stage 3")
         # stage 3
         x1, H1, W1 = self.patch_embed3(x1)
         for i, blk in enumerate(self.block3):
@@ -1620,7 +1625,10 @@ class EncoderTransformer_v4(nn.Module):
         x1 = self.norm3(x1)
         x1 = x1.reshape(B, H1, W1, -1).permute(0, 3, 1, 2).contiguous()
         outs.append(x1)
+        #print(f"Stage 3 shape: {x1.shape}")
 
+
+        #print("stage 4")
         # stage 4
         x1, H1, W1 = self.patch_embed4(x1)
         for i, blk in enumerate(self.block4):
@@ -1628,6 +1636,9 @@ class EncoderTransformer_v4(nn.Module):
         x1 = self.norm4(x1)
         x1 = x1.reshape(B, H1, W1, -1).permute(0, 3, 1, 2).contiguous()
         outs.append(x1)
+
+        #print(f"Stage 4 shape: {x1.shape}")
+
         return outs
 
     def forward(self, x):
