@@ -4,3 +4,4 @@
 *.npy
 datasets/LEVIR_CD256
 datasets/LEVIR_CD128
+checkpoints
