@@ -12,7 +12,7 @@ data_name=DSIFN
 img_size=256    
 batch_size=8   
 lr=0.0001         
-max_epochs=100
+max_epochs=5
 embed_dim=256
 
 net_G=ChangeFormerV6        #ChangeFormerV6 is the finalized verion
