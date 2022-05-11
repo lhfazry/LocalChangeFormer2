@@ -9,11 +9,11 @@ vis_root=vis
 data_name=LEVIR
 n_class=2
 
-img_size=256    
+img_size=128    
 batch_size=8   
 lr=0.0001         
 max_epochs=5
-embed_dim=256
+embed_dim=128
 
 net_G=LocalChangeFormer        #ChangeFormerV6 is the finalized verion
 
