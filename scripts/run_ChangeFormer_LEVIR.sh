@@ -25,7 +25,7 @@ multi_scale_infer=False
 shuffle_AB=False
 
 #Initializing from pretrained weights
-pretrain=/Users/fazry/Documents/ChangeFormer/segformer.b2.512x512.ade.160k.pth
+pretrain=segformer.b2.512x512.ade.160k.pth
 
 #Train and Validation splits
 split=train         #trainval
