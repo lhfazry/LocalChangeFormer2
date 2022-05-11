@@ -20,7 +20,7 @@ def cross_entropy(input, target, weight=None, reduction='mean',ignore_index=255)
     return F.cross_entropy(input=input, target=target, weight=weight,
                            ignore_index=ignore_index, reduction=reduction)
 
-def wdmc(input, target, reduction='mean',ignore_index=255):
+def wdmc(input, target, reduction='mean', ignore_index=255):
     """
     logSoftmax_with_loss
     :param input: torch.Tensor, N*C*H*W
