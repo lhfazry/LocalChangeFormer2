@@ -19,6 +19,7 @@ if __name__ == '__main__':
         print(f'Processing {f2}')
 
         for fi1 in glob(os.path.join(dataset_root, f2, '*')):
+            print(f'Resizing {fi1}')
             img = cv2.imread(fi1)
             resized = cv2.resize(img, (128, 128))
 
