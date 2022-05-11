@@ -1841,7 +1841,7 @@ class ChangeFormerV5(nn.Module):
 # ChangeFormerV6:
 class ChangeFormerV6(nn.Module):
 
-    def __init__(self, input_nc=3, output_nc=2, decoder_softmax=False, embed_dim=256):
+    def __init__(self, input_nc=3, output_nc=2, decoder_softmax=False, embed_dim=128):
         super(ChangeFormerV6, self).__init__()
         #Transformer Encoder
         self.embed_dims = [64, 128, 320, 512]
@@ -1851,7 +1851,7 @@ class ChangeFormerV6(nn.Module):
         self.attn_drop = 0.1
         self.drop_path_rate = 0.1 
 
-        self.Tenc_x2    = EncoderTransformer_v3(img_size=256, patch_size = 7, in_chans=input_nc, num_classes=output_nc, embed_dims=self.embed_dims,
+        self.Tenc_x2    = EncoderTransformer_v3(img_size=128, patch_size = 7, in_chans=input_nc, num_classes=output_nc, embed_dims=self.embed_dims,
                  num_heads = [1, 2, 4, 8], mlp_ratios=[4, 4, 4, 4], qkv_bias=True, qk_scale=None, drop_rate=self.drop_rate,
                  attn_drop_rate = self.attn_drop, drop_path_rate=self.drop_path_rate, norm_layer=partial(nn.LayerNorm, eps=1e-6),
                  depths=self.depths, sr_ratios=[8, 4, 2, 1])
