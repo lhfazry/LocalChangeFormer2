@@ -30,7 +30,7 @@ def wdmc(input, target, reduction='mean', ignore_index=255):
     """
     target = target.long()
     #weight = torch.tensor([0.3, 2.2]).cuda()
-    weight = torch.tensor([0.3, 0.6]).cuda()
+    weight = torch.tensor([0.3, 0.4]).cuda()
 
     if target.dim() == 4:
         target = torch.squeeze(target, dim=1)
