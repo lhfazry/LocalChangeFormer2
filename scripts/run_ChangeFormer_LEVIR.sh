@@ -12,7 +12,7 @@ data_name=LEVIR
 img_size=128    
 batch_size=8   
 lr=0.0001         
-max_epochs=20
+max_epochs=10
 embed_dim=128
 
 net_G=ChangeFormerV6        #ChangeFormerV6 is the finalized verion
