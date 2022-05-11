@@ -21,4 +21,8 @@ if __name__ == '__main__':
         for fi1 in glob(os.path.join(dataset_root, f2, '*')):
             img = cv2.imread(fi1)
             resized = cv2.resize(img, (128, 128))
+
+            if f2 == 'label':
+                resized = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
+
             cv2.imwrite(fi1, resized)
