@@ -9,7 +9,7 @@ import torch
 import torch.optim as optim
 import numpy as np
 from misc.metric_tool import ConfuseMatrixMeter
-from models.losses import cross_entropy
+from models.losses import cross_entropy, wdmc
 import models.losses as losses
 from models.losses import get_alpha, softmax_helper, FocalLoss, mIoULoss, mmIoULoss, ContrastiveLoss1
 
@@ -96,7 +96,7 @@ class CDTrainer():
         if args.loss == 'ce':
             self._pxl_loss = cross_entropy
         elif args.loss == 'wdmc':
-            self._pxl_loss = ContrastiveLoss1()
+            self._pxl_loss = wdmc
         elif args.loss == 'bce':
             self._pxl_loss = losses.binary_ce
         elif args.loss == 'fl':
